@@ -79,14 +79,9 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
     }
 
     currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray);
-
-    //Muestro las categorías ordenadas
     showCategoriesList();
 }
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(CATEGORIES_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
@@ -95,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
         }
     });
+    user()
 
     document.getElementById("sortAsc").addEventListener("click", function(){
         sortAndShowCategories(ORDER_ASC_BY_NAME);
@@ -139,5 +135,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
 
         showCategoriesList();
+       
     });
+
+    function user(){
+        let user = localStorage.getItem("user")
+        document.getElementById("user").innerHTML = user
+    
+    }
 });

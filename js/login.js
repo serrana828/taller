@@ -11,6 +11,7 @@ function resetPasswordField(){
     document.getElementById("password").classList.remove("is-invalid");
 }
 
+
 function login(){
 
     let email=document.getElementById("email").value;
@@ -27,8 +28,8 @@ function login(){
         resetPasswordField()
     }
     if (email != "" && password != ""){
-        location.href = "inicio.html";
-
+        window.localStorage.setItem("user",email)
+        location.href = "inicio.html" 
      }
     
 }
