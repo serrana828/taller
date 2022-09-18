@@ -30,19 +30,52 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item"><output class="nav-link" id="user"></output>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
+  <main class="pb-5">
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      <div class="text-center p-4">
+      <br>
+      <h1><output id="productName"></output></h1>
+      <br>
     </div>
-  </main>
+    <div>
+      <h5><b>Precio</b></h5>
+      <h6 id="productCurrencyCost"></h6><br>
+      <h5><b>Descripción</b></h5>
+      <h6 id="productDescription"></h6><br>
+      <h5><b>Categoría</b></h5>
+      <h6 id="productCategory"></h6><br>
+      <h5><b>Cantidad de artículos vendidos</b></h5>
+      <h6 id="productSouldCount"></h6><br>
+      <h5><b>Imágenes Ilustrativas</b></h5>
+    </div>
+      <div id="productImages"></div><br><br><br>
+      
+    <div id="comments"></div><br>
+  <div>
+    <h4>Comentar</h4><br>
+    <p>Tu opinión:</p>
+    <form>
+      <textarea name="comments" rows="10" cols="50"></textarea>
+      <br><br>
+      <label for="cars">Tu puntuación:</label><br><br>
+      <select id="score" name="score" size="1">
+      <option value="1">   1   </option>
+      <option value="2">   2   </option>
+      <option value="3">   3   </option>
+      <option value="4">   4   </option>
+      <option value="5">   5   </option>
+      </select><br><br><br>
+      <input type="submit">
+    </form>
+  </div>
+  </div>
+    </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
