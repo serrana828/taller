@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         updateTotalCosts();
     });
 
-
+user ()
     //Configuraciones para el elemento que sube archivos
     let dzoptions = {
         url:"/",

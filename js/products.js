@@ -1,6 +1,6 @@
-const ORDER_BY_PROD_PRICE = "Price.";
-const ORDER_ASC_BY_PRICE = "asc.";
-const ORDER_DESC_BY_PRICE = "des.";
+const ORDER_BY_PROD_COST = "Price.";
+const ORDER_ASC_BY_COST = "asc.";
+const ORDER_DESC_BY_COST = "des.";
 let catID = localStorage.getItem("catID");
 const PRODUCTS_JSON = PRODUCTS_URL + catID + ".json";
 let currentProductsArray = [];
@@ -11,26 +11,26 @@ let currentSortCriteria = undefined;
 
 function sortProducts(criteria, array) {
     let result = [];
-    if (criteria === ORDER_BY_PROD_PRICE) {
+    if (criteria === ORDER_BY_PROD_COST) {
         result = array.sort(function (a, b) {
-            let aPrice = parseInt(a.price);
-            let bPrice = parseInt(b.price);
+            let aCost = parseInt(a.cost);
+            let bCost = parseInt(b.cost);
 
-            if (aPrice > bPrice) { return -1; }
-            if (aPrice < bPrice) { return 1; }
+            if (aCost > bCost) { return -1; }
+            if (aCost < bCost) { return 1; }
             return 0;
         });
         }
-    else if (criteria === ORDER_ASC_BY_PRICE)
+    else if (criteria === ORDER_ASC_BY_COST)
         result = array.sort(function(a, b) {
-            if ( a.price < b.price ){ return -1; }
-            if ( a.price > b.price ){ return 1; }
+            if ( a.cost < b.cost ){ return -1; }
+            if ( a.cost > b.cost ){ return 1; }
             return 0;
         });
-    else if (criteria === ORDER_DESC_BY_PRICE){
+    else if (criteria === ORDER_DESC_BY_COST){
         result = array.sort(function(a, b) {
-            if ( a.price > b.price ){ return -1; }
-            if ( a.price < b.price ){ return 1; }
+            if ( a.cost > b.cost ){ return -1; }
+            if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
     }
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             showProductsList(currentProductsArray);
         }
     });
-    
+user ()
     document.getElementById("sortByPrice").addEventListener("click", function () {
         sortAndShowProducts(ORDER_BY_PROD_PRICE);
     });
@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showProductsList();
     });
+
 
     document.getElementById("rangeFilterPrice").addEventListener("click", function () {
 
